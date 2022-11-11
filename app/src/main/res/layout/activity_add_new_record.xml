@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addNewRecord">
+
+    <EditText
+        android:id="@+id/appNameET1"
+        android:hint="app name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/appAgeLimitET1"
+        android:hint="age limit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/appPriceET1"
+        app:layout_constraintTop_toBottomOf="@id/appNameET1"/>
+
+    <EditText
+        android:id="@+id/appPriceET1"
+        android:layout_width="0dp"
+        android:hint="price"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/appAgeLimitET1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appNameET1"/>
+
+    <ImageView
+        android:id="@+id/appImage"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/appPriceET1"/>
+
+    <android.widget.Button
+        android:id="@+id/addNewRecordBtn1"
+        android:background="@drawable/button_style"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appImage"/>
+
+    <android.widget.Button
+        android:id="@+id/prevPageBtn1"
+        android:background="@drawable/button_style"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="previous"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addNewRecordBtn1"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

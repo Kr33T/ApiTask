@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ApiTask</string>
+    <string-array name="bdNames">
+        <item>none</item>
+        <item>Price</item>
+        <item>Age limit</item>
+        <item>App name</item>
+    </string-array>
+    <string-array name="ascOrDesc">
+        <item>Ascending</item>
+        <item>Descending</item>
+    </string-array>
+</resources>

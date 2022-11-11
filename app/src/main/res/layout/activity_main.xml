@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/searchET"
+        android:hint="search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/sortText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order by"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchET" />
+
+    <Spinner
+        android:id="@+id/orderByItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/bdNames"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toStartOf="@id/descOrAsc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sortText" />
+
+    <Spinner
+        android:id="@+id/descOrAsc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/ascOrDesc"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/orderByItem"
+        app:layout_constraintTop_toBottomOf="@id/sortText" />
+
+    <android.widget.Button
+        android:id="@+id/searchBTN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:background="@drawable/button_style"
+        android:text="search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/clearOrderBy"
+        app:layout_constraintTop_toBottomOf="@id/orderByItem"/>
+
+    <android.widget.Button
+        android:id="@+id/clearOrderBy"
+        android:layout_marginLeft="5dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
+        android:text="Clear sorting"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/searchBTN"
+        app:layout_constraintTop_toBottomOf="@id/descOrAsc"
+        />
+
+    <ListView
+        android:id="@+id/appsList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        app:layout_constraintTop_toBottomOf="@id/searchBTN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/addNewRecord"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <android.widget.Button
+        android:text="Add new"
+        android:id="@+id/addNewRecord"
+        android:layout_width="match_parent"
+        android:background="@drawable/button_style"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appsList"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

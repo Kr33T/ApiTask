@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editApp">
+
+    <EditText
+        android:id="@+id/appNameET"
+        android:hint="app name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/appAgeLimitET"
+        />
+    <EditText
+        android:id="@+id/appAgeLimitET"
+        android:hint="age limit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/appPriceET"
+        app:layout_constraintTop_toBottomOf="@id/appNameET"/>
+
+    <EditText
+        android:id="@+id/appPriceET"
+        android:hint="price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/appAgeLimitET"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appNameET"/>
+
+    <ImageView
+        android:id="@+id/appImageIV"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appPriceET"/>
+
+    <android.widget.Button
+        android:id="@+id/saveChangesBtn"
+        android:background="@drawable/button_style"
+        android:textColor="@color/white"
+        android:text="save changes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appImageIV"
+        android:layout_marginTop="40dp"/>
+
+    <android.widget.Button
+        android:id="@+id/deleteBtn"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/button_style"
+        android:textColor="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="delete record"
+        app:layout_constraintEnd_toStartOf="@id/deletePicBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/saveChangesBtn" />
+
+    <android.widget.Button
+        android:id="@+id/deletePicBtn"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/button_style"
+        android:textColor="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="delete picture"
+        app:layout_constraintStart_toEndOf="@id/deleteBtn"
+        app:layout_constraintTop_toBottomOf="@id/saveChangesBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/prevPageBtn"/>
+
+    <android.widget.Button
+        android:id="@+id/prevPageBtn"
+        android:background="@drawable/button_style"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/white"
+        android:text="Previous"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deleteBtn"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
