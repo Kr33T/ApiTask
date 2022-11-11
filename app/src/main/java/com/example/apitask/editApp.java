@@ -32,6 +32,7 @@ public class editApp extends AppCompatActivity implements View.OnClickListener {
     EditText appName, appAgeLimit, appPrice;
     Button saveChangesBtn, prevPageBtn, deleteBtn, deletePhoto;
     ImageView image;
+    int id;
     String encodedImage;
 
     @Override
@@ -73,6 +74,7 @@ public class editApp extends AppCompatActivity implements View.OnClickListener {
         call.enqueue(new Callback<DataModal>() {
             @Override
             public void onResponse(Call<DataModal> call, Response<DataModal> response) {
+                id = response.body().getApp_id();
                 appName.setText(response.body().getAppName());
                 appAgeLimit.setText(Integer.valueOf(response.body().getAppAgeLimit()).toString());
                 appPrice.setText(Double.valueOf(response.body().getAppPrice()).toString());
@@ -144,7 +146,7 @@ public class editApp extends AppCompatActivity implements View.OnClickListener {
                 double aPrice = Double.valueOf(appPrice.getText().toString());
                 int aAgeLimit = Integer.valueOf(appAgeLimit.getText().toString());
 
-                putChanges(aName, aPrice, aAgeLimit, encodedImage);
+                putChanges(id, aName, aPrice, aAgeLimit, encodedImage);
                 break;
             case R.id.prevPageBtn:
                 startActivity(new Intent(this, MainActivity.class));
@@ -160,13 +162,13 @@ public class editApp extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    private void putChanges(String appName, double appPrice, int appAgeLimit, String picture) {
+    private void putChanges(int id, String appName, double appPrice, int appAgeLimit, String picture) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://ngknn.ru:5001/ngknn/морозовав/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
-        DataModal modal = new DataModal(appName, appPrice, appAgeLimit, picture);
+        DataModal modal = new DataModal(id, appName, appPrice, appAgeLimit, picture);
         Call<DataModal> call = retrofitAPI.updateData(MainActivity.index, modal);
         call.enqueue(new Callback<DataModal>() {
             @Override
