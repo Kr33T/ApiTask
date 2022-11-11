@@ -78,6 +78,7 @@ public class editApp extends AppCompatActivity implements View.OnClickListener {
                 appName.setText(response.body().getAppName());
                 appAgeLimit.setText(Integer.valueOf(response.body().getAppAgeLimit()).toString());
                 appPrice.setText(Double.valueOf(response.body().getAppPrice()).toString());
+                encodedImage = response.body().getAppImage();
                 if(response.body().getAppImage() == null)
                 {
                     image.setImageResource(R.drawable.empty);
