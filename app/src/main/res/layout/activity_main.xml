@@ -8,18 +8,21 @@
 
     <EditText
         android:id="@+id/searchET"
-        android:hint="search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="@string/search"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck"
+        android:autofillHints=""
+        android:inputType="text" />
 
     <TextView
         android:id="@+id/sortText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Order by"
+        android:text="@string/order_by"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,18 +54,18 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:background="@drawable/button_style"
-        android:text="search"
+        android:text="@string/search"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/clearOrderBy"
         app:layout_constraintTop_toBottomOf="@id/orderByItem"/>
 
     <android.widget.Button
         android:id="@+id/clearOrderBy"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_style"
-        android:text="Clear sorting"
+        android:text="@string/clear_sorting"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/searchBTN"
@@ -81,7 +84,7 @@
         />
 
     <android.widget.Button
-        android:text="Add new"
+        android:text="@string/add_new"
         android:id="@+id/addNewRecord"
         android:layout_width="match_parent"
         android:background="@drawable/button_style"

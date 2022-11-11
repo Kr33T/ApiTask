@@ -136,8 +136,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             try
             {
-                //URL url = new URL("https://ngknn.ru:5001/NGKNN/МорозовАВ/api/apps/search?searchAppName=" + searchET.getText().toString() + "&order=" + orderBy.toString() + "&field=" + orderByItem.getSelectedItemPosition());
-                URL url = new URL("https://ngknn.ru:5001/NGKNN/МорозовАВ/api/apps");
+                URL url = new URL("https://ngknn.ru:5001/NGKNN/МорозовАВ/api/apps/search?searchAppName=" + searchET.getText().toString() + "&order=" + orderBy.toString() + "&field=" + orderByItem.getSelectedItemPosition());
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));

@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">ApiTask</string>
+    <string name="save_changes">save changes</string>
+    <string name="delete_record">delete record</string>
+    <string name="delete_picture">delete picture</string>
+    <string name="previous">Previous</string>
+    <string name="price">price</string>
+    <string name="age_limit">age limit</string>
+    <string name="todo">TODO</string>
+    <string name="app_name_text">app name</string>
+    <string name="order_by">Order by</string>
+    <string name="search">search</string>
+    <string name="clear_sorting">Clear sorting</string>
+    <string name="add_new">Add new</string>
+    <string name="add">add</string>
+    <string name="app_image">app image</string>
     <string-array name="bdNames">
         <item>none</item>
         <item>Price</item>

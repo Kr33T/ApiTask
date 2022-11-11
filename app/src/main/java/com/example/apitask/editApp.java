@@ -173,7 +173,7 @@ public class editApp extends AppCompatActivity implements View.OnClickListener {
         call.enqueue(new Callback<DataModal>() {
             @Override
             public void onResponse(Call<DataModal> call, Response<DataModal> response) {
-                if(!response.isSuccessful())
+                if(response.isSuccessful())
                 {
                     Toast.makeText(editApp.this, "Изменение прошло успешно", Toast.LENGTH_SHORT).show();
                     return;
