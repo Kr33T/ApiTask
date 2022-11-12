@@ -187,6 +187,7 @@ public class editApp extends AppCompatActivity implements View.OnClickListener {
 
                     Toast.makeText(editApp.this, "Изменение прошло успешно", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(editApp.this, MainActivity.class));
+                    finish();
                     return;
                 }
                 Toast.makeText(editApp.this, "Произошла ошибка", Toast.LENGTH_SHORT).show();
@@ -224,6 +225,7 @@ public class editApp extends AppCompatActivity implements View.OnClickListener {
 
                 Toast.makeText(editApp.this, "Удаление прошло успешно", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(editApp.this, MainActivity.class));
+                finish();
             }
             @Override
             public void onFailure(Call<DataModal> call, Throwable t) {

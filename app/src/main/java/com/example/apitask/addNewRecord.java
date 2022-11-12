@@ -113,6 +113,7 @@ public class addNewRecord extends AppCompatActivity implements View.OnClickListe
                         }
                         Toast.makeText(addNewRecord.this, "Данные добавлены", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(addNewRecord.this, MainActivity.class));
+                        finish();
                     }
                     @Override
                     public void onFailure(Call<DataModal> call, Throwable t) {
