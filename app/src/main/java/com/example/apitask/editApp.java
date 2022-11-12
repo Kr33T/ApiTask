@@ -164,6 +164,11 @@ public class editApp extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void putChanges(int id, String appName, double appPrice, int appAgeLimit, String picture) {
+
+        saveChangesBtn.setEnabled(false);
+        deleteBtn.setEnabled(false);
+        deletePhoto.setEnabled(false);
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://ngknn.ru:5001/ngknn/морозовав/api/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -176,7 +181,12 @@ public class editApp extends AppCompatActivity implements View.OnClickListener {
             public void onResponse(Call<DataModal> call, Response<DataModal> response) {
                 if(response.isSuccessful())
                 {
+                    saveChangesBtn.setEnabled(true);
+                    deleteBtn.setEnabled(true);
+                    deletePhoto.setEnabled(true);
+
                     Toast.makeText(editApp.this, "Изменение прошло успешно", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(editApp.this, MainActivity.class));
                     return;
                 }
                 Toast.makeText(editApp.this, "Произошла ошибка", Toast.LENGTH_SHORT).show();
@@ -190,6 +200,10 @@ public class editApp extends AppCompatActivity implements View.OnClickListener {
 
     private void deleteRecord(int index)
     {
+        saveChangesBtn.setEnabled(false);
+        deleteBtn.setEnabled(false);
+        deletePhoto.setEnabled(false);
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://ngknn.ru:5001/NGKNN/МорозовАВ/api/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -204,6 +218,10 @@ public class editApp extends AppCompatActivity implements View.OnClickListener {
                     Toast.makeText(editApp.this, "При удание записи возникла ошибка", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                saveChangesBtn.setEnabled(false);
+                deleteBtn.setEnabled(false);
+                deletePhoto.setEnabled(false);
+
                 Toast.makeText(editApp.this, "Удаление прошло успешно", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(editApp.this, MainActivity.class));
             }

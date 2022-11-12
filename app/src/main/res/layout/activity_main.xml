@@ -49,26 +49,14 @@
         app:layout_constraintTop_toBottomOf="@id/sortText" />
 
     <android.widget.Button
-        android:id="@+id/searchBTN"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:background="@drawable/button_style"
-        android:text="@string/search"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/clearOrderBy"
-        app:layout_constraintTop_toBottomOf="@id/orderByItem"/>
-
-    <android.widget.Button
         android:id="@+id/clearOrderBy"
-        android:layout_marginStart="5dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_style"
         android:text="@string/clear_sorting"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/searchBTN"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/descOrAsc"
         />
 
@@ -77,7 +65,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="1dp"
-        app:layout_constraintTop_toBottomOf="@id/searchBTN"
+        app:layout_constraintTop_toBottomOf="@id/clearOrderBy"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/addNewRecord"
         app:layout_constraintEnd_toEndOf="parent"

@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Spinner orderByItem, descOrAsc;
 
     Boolean orderBy;
-    Button addNew, searchBtn, clearSort;
+    Button addNew, clearSort;
     ListView list;
     EditText searchET;
     public static int index;
@@ -58,14 +58,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lvApps.setAdapter(adapterApps);
 
         searchET = findViewById(R.id.searchET);
+        searchET.addTextChangedListener(new TextWatcher() {
 
-        searchBtn = findViewById(R.id.searchBTN);
-        searchBtn.setOnClickListener(this);
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                new GetApps().execute();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+
+        });
 
         clearSort = findViewById(R.id.clearOrderBy);
         clearSort.setOnClickListener(this);
 
         orderByItem = findViewById(R.id.orderByItem);
+        orderByItem.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                new GetApps().execute();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         descOrAsc = findViewById(R.id.descOrAsc);
         descOrAsc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -80,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         orderBy = false;
                         break;
                 }
+                new GetApps().execute();
             }
 
             @Override
@@ -109,9 +136,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.addNewRecord:
                 startActivity(new Intent(this, addNewRecord.class));
                 finish();
-                break;
-            case R.id.searchBTN:
-                new GetApps().execute();
                 break;
             case R.id.clearOrderBy:
                 orderByItem.setSelection(0);
